@@ -15,9 +15,10 @@ $id = $_GET['id'];
 
 try {
     // Conexión a la base de datos
-    $pdo = new PDO("mysql:host=localhostsql203.infinityfree.com;dbname=if0_38490454_asistencia;charset=utf8", "if0_38490454", "Horaciocaniz7", [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-    ]);
+    $pdo = new PDO("mysql:host=sql203.infinityfree.com;dbname=if0_38490454_asistencia;charset=utf8", "if0_38490454", "Horaciocaniz7", [
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+]);
+
 
     $sql = "SELECT 
             p.id,
