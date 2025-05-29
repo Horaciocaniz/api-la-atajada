@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: la-atajada-api
+    env: docker
+    plan: free
+    region: oregon
