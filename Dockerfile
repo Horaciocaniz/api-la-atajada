@@ -1,12 +1,13 @@
 FROM php:8.2-apache
 
-# Copia los archivos de tu repositorio a la carpeta del servidor Apache
-COPY ./api /var/www/html
+# Instalar extensiones necesarias
+RUN docker-php-ext-install pdo pdo_mysql
 
-# Activa mod_rewrite si lo necesitas
-RUN a2enmod rewrite
+# Copiar archivos al contenedor
+COPY . /var/www/html/
 
-# Establece los permisos adecuados
+# Dar permisos adecuados
 RUN chown -R www-data:www-data /var/www/html
 
+# Exponer el puerto por defecto
 EXPOSE 80
